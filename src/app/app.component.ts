@@ -13,10 +13,7 @@ export class AppComponent implements OnInit {
   letters;
   perms;
   showResult = false;
-  domain = environment.production ?
-  'https://localhost:5000' :
-  'https://wordsmateserver.herokuapp.com';
-
+  baseURL = environment.domain;
   constructor(private http: HttpService) {}
 
   private fetchData(url) {
@@ -25,7 +22,7 @@ export class AppComponent implements OnInit {
 
   make_request() {
     console.log(this.letters);
-    this.fetchData(`${this.domain}/data?let=${this.letters}`)
+    this.fetchData(`${this.baseURL}/data?let=${this.letters}`)
     .subscribe(data => this.perms = data);
     console.log(this.perms);
     this.showResult = true;
