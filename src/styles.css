@@ -3,7 +3,7 @@
 * {
       box-sizing: border-box;
 }
-body {
+html, body {
     background: #ECEFF1;
     color: rgba(0, 0, 0, 0.87);
     font-family: Raleway, Roboto, Helvetica, Arial, sans-serif;
