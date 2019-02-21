@@ -5,14 +5,14 @@ body {
     font-weight: 400;
 }
 
-div {
+/*div {
     width: 800px;
     margin: 5em auto 2.5em;
-}
+}*/
 
-div:first-child {
+/*div:first-child {
     margin-top: 3em;
-}
+}*/
 .tagcloud01 ul {
     margin: 0;
     padding: 0;

@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
     "core-js": "^2.5.4",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
@@ -29,7 +30,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.2",
     "@angular/cli": "~7.1.4",
-    "@angular/compiler-cli": "^7.2.5",
+    "@angular/compiler-cli": "^7.2.6",
     "@angular/language-service": "~7.1.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
@@ -48,6 +49,6 @@
     "typescript": "~3.1.6"
   },
   "engines": {
-    "node" : "8.10.0"
+    "node": "8.10.0"
   }
 }
