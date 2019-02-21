@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   }
 
   async make_request() {
-    this.fetchData(`${this.baseURL}/data?let=${this.letters}`)
+    await this.fetchData(`${this.baseURL}/data?let=${this.letters}`)
     .subscribe(data => this.perms = data);
     this.showResult = true;
   }
