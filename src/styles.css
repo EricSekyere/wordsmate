@@ -1,12 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
 
+* {
+      box-sizing: border-box;
+}
 body {
     background: #ECEFF1;
     color: rgba(0, 0, 0, 0.87);
     font-family: Raleway, Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
+    height: 100% !important;
+
 }
 body header {
     text-align: center;
+}
+div.main-container{
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 70%;
+  width: 100%;
+}
+div.main-container *{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+footer{
+    margin-bottom: 0;
 }
