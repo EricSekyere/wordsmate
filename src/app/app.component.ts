@@ -20,11 +20,9 @@ export class AppComponent implements OnInit {
    return this.http.fetchData(url);
   }
 
-  make_request() {
-    console.log(this.letters);
+  async make_request() {
     this.fetchData(`${this.baseURL}/data?let=${this.letters}`)
     .subscribe(data => this.perms = data);
-    console.log(this.perms);
     this.showResult = true;
   }
 
