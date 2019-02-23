@@ -1,5 +1,22 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div id="app-container">
+
+
+<mat-drawer-container class="container" autosize>
+    <mat-drawer #drawer class="sidenav">
+        <a mat-button color="primary" href="#">View Source</a>
+        <a mat-button color="primary" href="#">Access Server</a>
+    </mat-drawer>
+    <div class="sidenav-content">
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <button mat-icon-button (click)="drawer.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button><span>Wordsmate</span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+
+    </div>
+</mat-drawer-container>
+<!--<div id="app-container">
     <div id="inner-container" style="text-align:center">
         <div class="input-group mb-3 input-group-lg">
             <div class="input-group-prepend">
@@ -7,7 +24,7 @@
                     aria-haspopup="true" aria-expanded="false" disabled >English</button>
                <!-- <div class="dropdown-menu">
                     <a class="dropdown-item" href="#" name="english">English</a>
-                </div>-->
+                </div>
             </div>
             <input type="text" class="form-control" aria-label="Text input with dropdown button" id="letters"
                 aria-describedby="letterHelp" placeholder="Enter up to 10 letters" [(ngModel)]="letters" name="letters"
@@ -23,6 +40,7 @@
             <li *ngFor="let item  of perm.value">{{item}}</li>
         </ul>
     </div>
-</div>
+</div>-->
 <router-outlet></router-outlet>
+
 
