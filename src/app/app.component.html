@@ -1,5 +1,3 @@
-
-
 <mat-drawer-container class="container" autosize>
     <mat-drawer #drawer class="sidenav">
         <a mat-button color="primary" href="#">View Source</a>
@@ -15,7 +13,48 @@
         </mat-toolbar>
 
     </div>
+
+    <!--The word input-->
+    <mat-card color="primary">
+        <mat-card-header>
+            <mat-card-title>Enter Letters to serach below</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                    <input matInput #input type="text" class="form-control" id="letters" placeholder="Enter up to 10 letters"
+                        [(ngModel)]="letters" name="letters" maxlength="10">
+                    <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+                </mat-form-field>
+                <!-- <div>
+                    <mat-slider thumbLabel min="3" max="entrytotal" step="1" value="3"></mat-slider>
+                </div>
+                -->
+            </form>
+            <button mat-button (click)="make_request()">Submit</button>
+
+        </mat-card-content>
+    </mat-card>
 </mat-drawer-container>
+
+<!--The results display-->
+<mat-grid-list cols="1" rowHeight="2:1" id="result" *ngIf="showResult">
+    <mat-grid-tile *ngFor="let perm of perms | keys">
+        <mat-card color="primary" *ngIf="perm.value.length">
+            <mat-card-header>
+                <mat-card-title>Words with {{perm.key}} letters</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item role="listitem" *ngFor="let item  of perm.value">{{item}}</mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
 <!--<div id="app-container">
     <div id="inner-container" style="text-align:center">
         <div class="input-group mb-3 input-group-lg">
@@ -42,5 +81,3 @@
     </div>
 </div>-->
 <router-outlet></router-outlet>
-
-
