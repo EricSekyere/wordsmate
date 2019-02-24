@@ -37,39 +37,28 @@
         </mat-card-content>
     </mat-card>
 
-<!--The results display-->
-<mat-grid-list cols="2" rowHeight="2:1" id="result" *ngIf="showResult">
-    <mat-grid-tile *ngFor="let perm of perms | keys">
-        <mat-card color="primary" *ngIf="perm.value.length">
-            <mat-card-header>
-                <mat-card-title>Words with {{perm.key}} letters</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <mat-list>
-                    <mat-list-item role="listitem" *ngFor="let item  of perm.value">{{item}}</mat-list-item>
-                </mat-list>
-            </mat-card-content>
-        </mat-card>
-    </mat-grid-tile>
-</mat-grid-list>
+    <!--The results display-->
+    <div class="result">
+        <mat-grid-list [cols]="1" rowHeight="2:0.5" id="result" *ngIf="showResult">
+            <mat-grid-tile *ngFor="let perm of perms | keys">
+                <mat-card color="primary" *ngIf="perm.value.length" class="words">
+                    <mat-card-header>
+                        <mat-card-title>Words with {{perm.key}} letters</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <mat-list>
+                            <mat-list-item role="listitem" *ngFor="let item  of perm.value">{{item}}</mat-list-item>
+                        </mat-list>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
 </mat-drawer-container>
 
 
 <!--<div id="app-container">
-    <div id="inner-container" style="text-align:center">
-        <div class="input-group mb-3 input-group-lg">
-            <div class="input-group-prepend">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false" disabled >English</button>
-               <!-- <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#" name="english">English</a>
-                </div>
-            </div>
-            <input type="text" class="form-control" aria-label="Text input with dropdown button" id="letters"
-                aria-describedby="letterHelp" placeholder="Enter up to 10 letters" [(ngModel)]="letters" name="letters"
-                maxlength="10">
-        </div>
-        <button type="submit" class="btn btn-primary" (click)="make_request()">Submit</button>
+    <div id="inner-container" style="text-align:center">bbbbbbbb
     </div>
 
 

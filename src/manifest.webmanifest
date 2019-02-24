@@ -1,6 +1,6 @@
 {
-  "name": "appview",
-  "short_name": "appview",
+  "name": "Wordsmate",
+  "short_name": "Wordsmate",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

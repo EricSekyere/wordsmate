@@ -4,11 +4,13 @@
     left:0;
     bottom:0;
     right: 0;
+    height: auto;
 }
 
 .container .mat-drawer{
-    padding: 5px;
+    padding: 2px;
     min-width: 200px;
+    line-height: 1em;
 }
 .container .mat-drawer .mat-button{
     display: block;
@@ -21,26 +23,41 @@
 .mat-card form *{
     display: block;
 }
+
+.result {
+    width: 60%;
+    margin-top: 6em;
+    position: relative;
+    height: auto;
+}
+.result.mat-grid-list{
+    margin: 1em;
+    padding:10px;  
+}
+.mat-grid-tile *{
+    margin: .5em;
+    line-height: 0.5em;
+    display: table;
+    height: auto;
+}
 .mat-grid-tile .mat-card{
     display:block;
-    top:300px;
-}
+    height: auto;
+    width: 100%;
+    position: relative;
+    text-align: left;
 
-.tagcloud01 ul {
+}
+.mat-grid-tile .mat-card .mat-card-content .mat-list{
     margin: 0;
     padding: 0;
-    list-style: none;
 }
-
-.tagcloud01 ul li {
+.mat-grid-tile .mat-card .mat-card-content .mat-list .mat-list-item{
     display: inline-block;
     margin: 0 .3em .3em 0;
     padding: 0;
-}
-
-.tagcloud01 ul li  {
     display: inline-block;
-    max-width: 100px;
+    max-width: 80px;
     height: 28px;
     line-height: 28px;
     padding: 0 1em;
@@ -55,10 +72,11 @@
     text-decoration: none;
     -webkit-transition: .2s;
     transition: .2s;
+    text-align: center;
 }
 
-.tagcloud01 ul li li:hover {
-    background-color: #3498db;
-    border: 1px solid #3498db;
-    color: #fff;
+.mat-grid-tile .mat-card .mat-card-content .mat-list .mat-list-item .mat-list-item:hover{
+        background-color: #3498db;
+        border: 1px solid #3498db;
+        color: #fff;
 }

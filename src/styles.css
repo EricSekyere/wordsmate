@@ -1,9 +1,9 @@
-@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 * {
       box-sizing: border-box;
 }
 html, body {
-    font-family: Raleway, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Raleway, Roboto, Helvetica, Arial, sans-serif !important;
     margin: 0;
     padding: 0;
 
