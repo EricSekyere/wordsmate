@@ -21,9 +21,10 @@ export class AppComponent implements OnInit {
   }
 
   make_request() {
-    console.log(`${this.baseURL}/data?let=${this.letters}`);
+    /*console.log(`${this.baseURL}/data?let=${this.letters}`);
     this.fetchData(`${this.baseURL}/data?let=${this.letters}`)
-    .subscribe(data => this.perms = data);
+    .subscribe(data => this.perms = data);*/
+    this.perms = { '3': ['ott', 'tot', 'toy', 'tty', 'tyt', 'yot'], '4': ['toty', 'tyto'] }
     this.showResult = true;
   }
 

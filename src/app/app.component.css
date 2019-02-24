@@ -14,13 +14,18 @@
     display: block;
     width: 100%;
 }
-.mat-card{
+.mat-card.word-input{
     position: relative;
-    top:20%;
+    top:80px;
 }
 .mat-card form *{
     display: block;
 }
+.mat-grid-tile .mat-card{
+    display:block;
+    top:300px;
+}
+
 .tagcloud01 ul {
     margin: 0;
     padding: 0;

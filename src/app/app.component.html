@@ -15,7 +15,7 @@
     </div>
 
     <!--The word input-->
-    <mat-card color="primary">
+    <mat-card color="primary" class="word-input">
         <mat-card-header>
             <mat-card-title>Enter Letters to serach below</mat-card-title>
         </mat-card-header>
@@ -36,10 +36,9 @@
 
         </mat-card-content>
     </mat-card>
-</mat-drawer-container>
 
 <!--The results display-->
-<mat-grid-list cols="1" rowHeight="2:1" id="result" *ngIf="showResult">
+<mat-grid-list cols="2" rowHeight="2:1" id="result" *ngIf="showResult">
     <mat-grid-tile *ngFor="let perm of perms | keys">
         <mat-card color="primary" *ngIf="perm.value.length">
             <mat-card-header>
@@ -53,6 +52,7 @@
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
+</mat-drawer-container>
 
 
 <!--<div id="app-container">
