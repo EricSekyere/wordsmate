@@ -14,7 +14,6 @@ export class AppComponent implements OnInit {
   perms;
   showResult = false;
   baseURL = environment.domain;
-  breakpoint: number;
   constructor(private http: HttpService) { }
 
   private fetchData(url) {
@@ -22,23 +21,19 @@ export class AppComponent implements OnInit {
   }
 
   make_request() {
-    /*console.log(`${this.baseURL}/data?let=${this.letters}`);
+    console.log(`${this.baseURL}/data?let=${this.letters}`);
     this.fetchData(`${this.baseURL}/data?let=${this.letters}`)
-    .subscribe(data => this.perms = data);*/
-    this.perms = {
+    .subscribe(data => this.perms = data);
+    /*this.perms = {
       '3': ['ert', 'eru', 'ery', 'etr', 'ety',
       'eur', 'eyr', 'ret', 'rey', 'rte', 'rtu',
       'rue', 'rut', 'ruy', 'rye', 'ter', 'try', 'tue', 'tur', 'tuy', 'tye', 'tyr', 'ure', 'ury', 'ute', 'utr', 'yer', 'yet'],
       '4': ['trey', 'tyre', 'uret', 'urey', 'yurt'], '5': ['tuyer'] } ;
-    this.showResult = true;
+    */
+      this.showResult = true;
   }
 
   ngOnInit(): void {
     this.showResult = false;
-    this.breakpoint = (window.innerWidth <= 400) ? 1 : 6;
-  }
-
-  onResize(event) {
-    this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 6;
   }
 }
