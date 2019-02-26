@@ -22,14 +22,15 @@ export class AppComponent implements OnInit {
 
   make_request() {
     console.log(`${this.baseURL}/data?let=${this.letters}`);
-    this.fetchData(`${this.baseURL}/data?let=${this.letters}`)
-    .subscribe(data => this.perms = data);
-    /*this.perms = {
+    if (environment.production) {
+      this.fetchData(`${this.baseURL}/data?let=${this.letters}`)
+      .subscribe(data => this.perms = data);
+    } else {this.perms = {
       '3': ['ert', 'eru', 'ery', 'etr', 'ety',
       'eur', 'eyr', 'ret', 'rey', 'rte', 'rtu',
       'rue', 'rut', 'ruy', 'rye', 'ter', 'try', 'tue', 'tur', 'tuy', 'tye', 'tyr', 'ure', 'ury', 'ute', 'utr', 'yer', 'yet'],
       '4': ['trey', 'tyre', 'uret', 'urey', 'yurt'], '5': ['tuyer'] } ;
-    */
+    }
       this.showResult = true;
   }
 

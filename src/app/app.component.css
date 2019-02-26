@@ -1,20 +1,29 @@
-.container{
+.mat-sidenav-container{
     position: absolute;
     top:0;
     left:0;
     bottom:0;
     right: 0;
     height: auto;
+    overflow-y: scroll;
+    font-family: inherit !important;
+    
 }
 
-.container .mat-drawer{
+.mat-sidenav-container .mat-sidenav {
     padding: 2px;
-    min-width: 200px;
-    line-height: 1em;
+    min-width: 250px;
+    line-height: 0.5em;
 }
-.container .mat-drawer .mat-button{
+.container .mat-sidenav .mat-button{
     display: block;
     width: 100%;
+}
+
+.mat-sidenav-content{
+    display: grid;
+    grid-auto-rows: 0.05fr 1fr 2fr;
+    
 }
 .mat-card.word-input{
     position: relative;
@@ -23,60 +32,27 @@
 .mat-card form *{
     display: block;
 }
-
-.result {
-    width: 60%;
-    margin-top: 6em;
-    position: relative;
-    height: auto;
-}
-.result.mat-grid-list{
-    margin: 1em;
-    padding:10px;  
-}
-.mat-grid-tile *{
-    margin: .5em;
-    line-height: 0.5em;
-    display: table;
-    height: auto;
-}
-.mat-grid-tile .mat-card{
-    display:block;
-    height: auto;
+.sc-result{
+    margin-top: 80px;
     width: 100%;
+}
+.result *{
+    text-align: center;
+}
+.mat-list > *{
+    display: block;
     position: relative;
-    text-align: left;
-
 }
-.mat-grid-tile .mat-card .mat-card-content .mat-list{
-    margin: 0;
-    padding: 0;
-}
-.mat-grid-tile .mat-card .mat-card-content .mat-list .mat-list-item{
-    display: inline-block;
-    margin: 0 .3em .3em 0;
-    padding: 0;
-    display: inline-block;
-    max-width: 80px;
+.mat-list .mat-list-item {
+    display: inline-block !important;
+    margin: 0 auto;
     height: 28px;
-    line-height: 28px;
-    padding: 0 1em;
-    background-color: #fff;
+    padding: 0 .1em;
     border: 1px solid #aaa;
     border-radius: 3px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     overflow: hidden;
     color: #333;
-    font-size: 13px;
-    text-decoration: none;
     -webkit-transition: .2s;
     transition: .2s;
     text-align: center;
-}
-
-.mat-grid-tile .mat-card .mat-card-content .mat-list .mat-list-item .mat-list-item:hover{
-        background-color: #3498db;
-        border: 1px solid #3498db;
-        color: #fff;
 }

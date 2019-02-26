@@ -1,60 +1,52 @@
-<mat-drawer-container class="container" autosize>
-    <mat-drawer #drawer class="sidenav">
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav class="sidenav">
         <a mat-button color="primary" href="#">View Source</a>
         <a mat-button color="primary" href="#">Access Server</a>
-    </mat-drawer>
-    <div class="sidenav-content">
-        <mat-toolbar>
-            <mat-toolbar-row>
-                <button mat-icon-button (click)="drawer.toggle()">
-                    <mat-icon>menu</mat-icon>
-                </button><span>Wordsmate</span>
-            </mat-toolbar-row>
-        </mat-toolbar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div id="sc-header">
+            <mat-toolbar>
+                <mat-toolbar-row>
+                    <button mat-icon-button (click)="sidenav.toggle()">
+                        <mat-icon>menu</mat-icon>
+                    </button><span>Wordsmate</span>
+                </mat-toolbar-row>
+            </mat-toolbar>
+        </div>
+        <div id="sc-main">
+            <!--The word input-->
+            <mat-card color="primary" class="word-input">
+                <mat-card-header>
+                    <mat-card-title>Enter letters to search below</mat-card-title>
+                </mat-card-header>
 
-    </div>
-
-    <!--The word input-->
-    <mat-card color="primary" class="word-input">
-        <mat-card-header>
-            <mat-card-title>Enter Letters to serach below</mat-card-title>
-        </mat-card-header>
-
-        <mat-card-content>
-            <form class="example-form">
-                <mat-form-field class="example-full-width">
-                    <input matInput #input type="text" class="form-control" id="letters" placeholder="Enter up to 10 letters"
-                        [(ngModel)]="letters" name="letters" maxlength="10">
-                    <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
-                </mat-form-field>
-                <!-- <div>
-                    <mat-slider thumbLabel min="3" max="entrytotal" step="1" value="3"></mat-slider>
+                <mat-card-content>
+                    <form class="example-form">
+                        <mat-form-field class="example-full-width">
+                            <input matInput #input type="text" class="form-control" id="letters" placeholder="Enter up to 10 letters"
+                                [(ngModel)]="letters" name="letters" maxlength="10">
+                            <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+                        </mat-form-field>
+                        <!-- <div>
+                                <mat-slider thumbLabel min="3" max="entrytotal" step="1" value="3"></mat-slider>
+                            </div>
+                            -->
+                    </form>
+                    <button mat-button (click)="make_request()">Submit</button>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <!--The results display-->
+        <div class="sc-result">
+            <div id="result" *ngIf="showResult" class="tagcloud01">
+                    <mat-list *ngFor="let perm of perms | keys">
+                        <h3 *ngIf="perm.value.length > 0">Words with {{perm.key}} letters</h3>
+                        <mat-list-item role="listitem" *ngFor="let item  of perm.value">{{item}}</mat-list-item>
+                    </mat-list>
                 </div>
-                -->
-            </form>
-            <button mat-button (click)="make_request()">Submit</button>
-
-        </mat-card-content>
-    </mat-card>
-
-    <!--The results display-->
-    <div class="result">
-        <mat-grid-list [cols]="1" rowHeight="2:0.5" id="result" *ngIf="showResult">
-            <mat-grid-tile *ngFor="let perm of perms | keys">
-                <mat-card color="primary" *ngIf="perm.value.length" class="words">
-                    <mat-card-header>
-                        <mat-card-title>Words with {{perm.key}} letters</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <mat-list>
-                            <mat-list-item role="listitem" *ngFor="let item  of perm.value">{{item}}</mat-list-item>
-                        </mat-list>
-                    </mat-card-content>
-                </mat-card>
-            </mat-grid-tile>
-        </mat-grid-list>
-    </div>
-</mat-drawer-container>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
 
 
 <!--<div id="app-container">
