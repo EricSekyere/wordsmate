@@ -39,26 +39,23 @@
         <!--The results display-->
         <div class="sc-result">
             <div id="result" *ngIf="showResult" class="tagcloud01">
-                    <mat-list *ngFor="let perm of perms | keys">
-                        <h3 *ngIf="perm.value.length > 0">Words with {{perm.key}} letters</h3>
-                        <mat-list-item role="listitem" *ngFor="let item  of perm.value">{{item}}</mat-list-item>
-                    </mat-list>
-                </div>
+                <mat-accordion>
+                    <mat-expansion-panel *ngFor="let perm of perms | keys">
+                        <mat-expansion-panel-header *ngIf="perm.value.length > 0">
+                            <mat-panel-title>
+                                Words with
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                {{perm.key}} letters
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <mat-list *ngIf="perm.value.length > 0">
+                            <mat-list-item role="listitem" *ngFor="let item  of perm.value">{{item}}</mat-list-item>
+                        </mat-list>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
-
-
-<!--<div id="app-container">
-    <div id="inner-container" style="text-align:center">bbbbbbbb
-    </div>
-
-
-    <div id="result" *ngIf="showResult" class="tagcloud01">
-        <ul *ngFor="let perm of perms | keys">
-            <h3 *ngIf="perm.value.length > 0">Words with {{perm.key}} letters</h3>
-            <li *ngFor="let item  of perm.value">{{item}}</li>
-        </ul>
-    </div>
-</div>-->
 <router-outlet></router-outlet>

@@ -22,6 +22,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +46,8 @@ import { MatListModule } from '@angular/material/list';
     MatInputModule,
     MatGridListModule,
     MatSliderModule,
-    MatListModule
+    MatListModule,
+    MatExpansionModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
