@@ -16,7 +16,7 @@
     line-height: 0.5em;
 }
 .container .mat-sidenav .mat-button{
-    display: block;
+    display: block !important;
     width: 100%;
 }
 

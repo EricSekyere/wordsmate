@@ -2,6 +2,7 @@
     <mat-sidenav #sidenav class="sidenav">
         <a mat-button color="primary" href="https://github.com/EricSekyere/wordsmate">View Source</a>
         <a mat-button color="primary" href="https://wordsmateserver.herokuapp.com/">Access Server</a>
+        <a mat-button color="primary" href = "#" [routerLink]="['/contact']" routerLinkActive="router-link-active" >Contact author</a>
     </mat-sidenav>
     <mat-sidenav-content>
         <div id="sc-header">
@@ -13,49 +14,7 @@
                 </mat-toolbar-row>
             </mat-toolbar>
         </div>
-        <div id="sc-main">
-            <!--The word input-->
-            <mat-card color="primary" class="word-input">
-                <mat-card-header>
-                    <mat-card-title>Enter letters to search below</mat-card-title>
-                </mat-card-header>
-
-                <mat-card-content>
-                    <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <input matInput #input type="text" class="form-control" id="letters" placeholder="Enter up to 10 letters"
-                                [(ngModel)]="letters" name="letters" maxlength="10">
-                            <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
-                        </mat-form-field>
-                        <!-- <div>
-                                <mat-slider thumbLabel min="3" max="entrytotal" step="1" value="3"></mat-slider>
-                            </div>
-                            -->
-                    </form>
-                    <button mat-button (click)="make_request()">Submit</button>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <!--The results display-->
-        <div class="sc-result">
-            <div id="result" *ngIf="showResult" class="tagcloud01">
-                <mat-accordion>
-                    <mat-expansion-panel *ngFor="let perm of perms | keys">
-                        <mat-expansion-panel-header *ngIf="perm.value.length > 0">
-                            <mat-panel-title>
-                                Words with
-                            </mat-panel-title>
-                            <mat-panel-description>
-                                {{perm.key}} letters
-                            </mat-panel-description>
-                        </mat-expansion-panel-header>
-                        <mat-list *ngIf="perm.value.length > 0">
-                            <mat-list-item role="listitem" *ngFor="let item  of perm.value">{{item}}</mat-list-item>
-                        </mat-list>
-                    </mat-expansion-panel>
-                </mat-accordion>
-            </div>
-        </div>
+<router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
-<router-outlet></router-outlet>
+

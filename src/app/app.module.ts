@@ -23,11 +23,17 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material';
+import { ErrorComponent } from './error/error.component';
+import { InputformComponent } from './inputform/inputform.component';
+import { ContactformComponent } from './contactform/contactform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    KeysPipe
+    KeysPipe,
+    ErrorComponent,
+    InputformComponent,
+    ContactformComponent
   ],
   imports: [
     BrowserModule,
