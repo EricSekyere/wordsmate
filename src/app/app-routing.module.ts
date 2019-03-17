@@ -6,6 +6,7 @@ import { ContactformComponent} from './contactform/contactform.component';
 
 const routes: Routes = [
   { path: 'home', component: InputformComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '404', component: ErrorComponent },
   { path: '**', redirectTo: '/404', pathMatch: 'full' },
   { path: 'contact', component: ContactformComponent },
