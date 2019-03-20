@@ -15,11 +15,14 @@
     min-width: 250px;
     line-height: 0.5em;
 }
-.container .mat-sidenav .mat-button{
-    display: block !important;
-    width: 100%;
+.container .mat-sidenav a{
+    display: block;
+    min-width: 250px;
+    width: inherit;
 }
-
+.mat-button {
+    min-width: 250px !important;
+}
 .mat-sidenav-content{
     display: grid;
     grid-auto-rows: 0.05fr 1fr 2fr;
